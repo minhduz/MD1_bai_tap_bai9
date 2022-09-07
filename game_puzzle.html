@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: url("image/theme1.jpg");
+        }
+        img{
+            width: 25%;
+            margin: 0;
+            padding: 0;
+            /*box-shadow: red 5px 5px 5px ;*/
+        }
+        .image{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<div class="image">
+    <img onclick="changeImage1()" id="row1" src="image/akali/akali-1.png">
+    <img onclick="changeImage2()" id="row2" src="image/kaisa/kaisa-2.png">
+    <img onclick="changeImage3()" id="row3" src="image/morgana/morgana-3.png">
+</div>
+</body>
+<script>
+    let count1 = 1;
+    let count2 = 2;
+    let count3 = 0;
+    let img1 = document.getElementById('row1');
+    let img2 = document.getElementById('row2');
+    let img3 = document.getElementById('row3');
+
+    function changeImage1(){
+        count1++;
+        if (count1===1){
+            img1.src='image/akali/akali-1.png'
+        } else if (count1===2){
+            img1.src='image/kaisa/kaisa-1.png'
+        } else if (count1===3){
+            img1.src='image/syndra/syndra-1.png'
+        } else {
+            count1=0
+            img1.src='image/morgana/morgana-1.png'
+        }
+        console.log('count1 trong ham 1 -- ', count1)
+        checkShadow()
+    }
+
+    function changeImage2(){
+        count2++;
+        if (count2===1){
+            img2.src='image/akali/akali-2.png'
+        } else if (count2===2){
+            img2.src='image/kaisa/kaisa-2.png'
+        } else if (count2===3){
+            img2.src='image/syndra/syndra-2.png'
+        } else {
+            count2=0
+            img2.src='image/morgana/morgana-2.png'
+        }
+        console.log('count1 trong ham 2 -- ', count2)
+        checkShadow()
+    }
+    function changeImage3(){
+        count3++;
+        if (count3===1){
+            img3.src='image/akali/akali-3.png'
+        } else if (count3===2){
+            img3.src='image/kaisa/kaisa-3.png'
+        } else if (count3===3){
+            img3.src='image/syndra/syndra-3.png'
+        } else {
+            count3=0
+            img3.src='image/morgana/morgana-3.png'
+        }
+        console.log('count1 trong ham 3 -- ', count3)
+        checkShadow()
+    }
+    function checkShadow() {
+        console.log('count1 = ',count1)
+        console.log('count2 = ',count2)
+        console.log('count3 = ',count3)
+        if (count1 === count2 && count2 === count3) {
+            console.log('vao day khong')
+            img1.style.boxShadow = 'blue 4px 4px 9px';
+            img2.style.boxShadow = 'blue 4px 4px 9px';
+            img3.style.boxShadow = 'blue 4px 4px 9px';
+        } else {
+            img1.style.boxShadow = 'red 4px 4px 9px';
+            img2.style.boxShadow = 'red 4px 4px 9px';
+            img3.style.boxShadow = 'red 4px 4px 9px';
+        }
+    }
+</script>
+</html>

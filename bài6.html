@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="price" type="text">
+<input onclick="tinhHoaHong()" type="button" value="Tính tiền hoa hồng">
+<h3 id="rose"></h3>
+</body>
+<script>
+    function tinhHoaHong(){
+        let price = Number(document.getElementById('price').value)
+        let rose = 0
+        if (price <= 100000 ){
+            rose = price*2/100
+        } else if (price <= 500000){
+            rose = (100000*2/100) + ((price-100000)*5/100)
+        } else{
+            rose = (100000*2/100) + ((500000-100000)*5/100) + ((price-500000)*9/100)
+        }
+        document.getElementById('rose').innerText = 'Số tiền hoa hồng là ' + rose
+    }
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        button{
+            padding: 10px 20px 10px 20px;
+            box-shadow: 2px 3px #dddddd;
+            margin-left: 10px;
+        }
+        #no{
+            padding-left: 22px;
+            padding-right: 22px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <form>
+        <h1>Do you love me</h1><br>
+        <button onclick="Yes()">Yes</button>
+        <button id="no" onmouseover="No()" style="position: absolute;">No</button>
+    </form>
+</div>
+<script>
+    function Yes(){
+        document.write("I love you too")
+    }
+
+    function No(){
+    let no = document.getElementById('no')
+    let winWidth = window.innerWidth
+    let winHeight = window.innerHeight
+
+      function getRandomNumber(min, max){
+          return Math.random() * (max - min) + min;
+      }
+
+      let randomTop = getRandomNumber(0, winHeight)
+    let randomLeft = getRandomNumber(0, winWidth)
+
+    no.style.top = randomTop + 'px'
+    no.style.left = randomLeft + 'px'
+  }
+</script>
+</body>
+</html>

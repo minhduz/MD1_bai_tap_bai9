@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  let a = +prompt("Nhập vào điểm kiểm tra:")
+  let b = +prompt("Nhập vào điểm kiểm tra giữa kỳ:")
+  let c = +prompt("Nhập vào điểm kiểm tra cuối kỳ:")
+  let d = (a+(b*2)+(c*3))/6
+  if(d>=8 && a >=6.5 && b>=6.5 && c >= 6.5){
+    alert("Học sinh Giỏi")
+  } else if(d>=6.5 && a >=5 && b>=5 && c >= 5) {
+    alert("Học sinh Khá")
+  } else if(d>=5 && a >=3.5 && b>=3.5 && c >= 3.5){
+    alert("Học sinh TB")
+  } else if(d>=3.5 && a >=2.0 && b>=2.0 && c >= 2.0){
+    alert("Học sinh yếu")
+  } else {
+    alert("Cút")
+  }
+</script>
+</html>
